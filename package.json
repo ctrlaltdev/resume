@@ -1,0 +1,23 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css",
+    "pug": "./node_modules/.bin/pugcompiler -R -o ./src/ ./src/pug/",
+    "pdf": "./node_modules/.bin/html5-to-pdf --template-path ./src/ --page-size 'Letter' --print-background -d 1000 -i ./src/resume.css -o ./dest/resume.pdf ./src/resume.html",
+    "compile": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css && ./node_modules/.bin/pugcompiler -R -o ./src/ ./src/pug/ && ./node_modules/.bin/html5-to-pdf --template-path ./src/ --page-size 'Letter' --print-background -d 1000 -i ./src/resume.css -o ./dest/resume.pdf ./src/resume.html"
+  },
+  "author": "Yorick <yorick@ctrlaltdev.xyz>",
+  "license": "MPL-2.0",
+  "dependencies": {
+    "html5-to-pdf": "^2.2.9"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "pugcompiler": "^1.0.1",
+    "webpack": "^3.10.0"
+  }
+}

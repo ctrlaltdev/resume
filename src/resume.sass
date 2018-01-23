@@ -1,0 +1,81 @@
+// main.sass
+@import reset
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600')
+
+// @GLOBAL
+html,
+body
+	font-size: 10pt
+	font-family: 'Titillium Web', sans-serif
+	height: 100%
+	width: 100%
+	background-color: transparent
+	background-repeat: repeat
+	background-attachment: fixed
+	color: black
+
+header
+  display: flex
+  justify-content: space-between
+  h1
+    flex: 0 0 auto
+    text-transform: uppercase
+    font-weight: 600
+    font-size: 3em
+  ul
+    flex: 0 0 auto
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    li
+      flex: 0 0 auto
+      width: 100%
+      margin: 5pt 0
+      text-align: right
+
+  a
+    border-bottom: solid #000000 3pt
+  a[href^="https://github"]
+    border-bottom: solid #0366d6 3pt
+  a[href^="https://linkedin"]
+    border-bottom: solid #0091ca 3pt
+
+section
+  margin-top: 20pt
+  h2
+    text-transform: uppercase
+    font-weight: 600
+    font-size: 1.6em
+    margin: 20pt 0 10pt
+    span
+      padding: 5pt 20pt
+      background-color: black
+      color: white
+  article
+    padding-left: 20pt
+    h3
+      text-transform: uppercase
+      font-size: 1.2em
+      margin: 20pt 0 5pt
+      span
+        font-weight: 600
+    p
+      margin: 5pt 0
+      padding-left: 20pt
+      font-size: 1em
+#projects
+  div
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    article
+      flex: 0 1 auto
+      align-self: stretch
+      width: calc(100% / 3 - 20pt)
+      border-left: solid #000000 3pt
+      padding-left: 10pt
+      margin: 10pt 0
+      h3
+        margin: 0 0 10pt
+      p
+        padding-left: 0
