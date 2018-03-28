@@ -12,9 +12,9 @@
   },
   "author": "Yorick <yorick@ctrlaltdev.xyz>",
   "license": "MPL-2.0",
-  "dependencies": {
+  "devDependencies": {
     "html5-to-pdf": "^2.2.9",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.8.3",
     "pug-cli": "^1.0.0-alpha6"
   }
 }
