@@ -1,5 +1,3 @@
-- var projects = [{"title":"Pug Compiler","link":"https://ctrlaltdev.xyz/pug-compiler","desc":["NPM package that compile pug files to html"]},{"title":"LMGTFY Queries","link":"https://ctrlaltdev.xyz/LMGTFY-queries","desc":["Project that retrieved and analysed 3M+ Let Me Google That For You Queries"]},{"title":"What You Doin","link":"https://ctrlaltdev.xyz/WYD","desc":["Web and CLI task manager"]},{"title":"Defenseur des droits","link":"https://www.defenseurdesdroits.fr","desc":["Website functional design.","Web Agency Management","Hosting and Deployment Management."]},{"title":"IPCAN","link":"https://ipcan.org","desc":["Website Project Management"]},{"title":"Apache Magazine","link":"http://apachemag.com","desc":["Website Functional Design.","Wordpress Theme Development.","Hosting and Deployment Managememt."]}];
-
 - var experiences = [{"title":"Web Project Manager", "org":"Defenseur des droits, French Prime Minister Services", "desc":["Web projects and service providers management: 10 websites launched, with 4 different providers.","Emailings: Newsletter and campaigns management."]},{"title":"DevOps", "org":"Freelance", "desc":["Development and deployment of web services: Visio web app for one to one interviews."]},{"title":"Customer Relations and Logistics Manager", "org":"NBM Groupe", "desc":["Customer relations management: before and after sales service.","Logistics: Parcels expedition and products supply management."]},{"title":"Product Manager", "org":"Apache Magazine", "desc":["Functional design, development and deployment of the magazine website."]},{"title":"Social Media Executive", "org":"Viadeo", "desc":["Viadeo brand social media account management.","Social media campaigns planning."]},{"title":"Partnerships and Events Assistant", "org":"Viadeo", "desc":["Alumni associations partnerships management.","Representatives product formations.","Event planning and organization.","Emailing campaigns development and management.","Partnerships data analysis."]}];
 
 - var education = [{"title":"Marketing, Communication and Internet", "org":"ESA3", "desc":["Market benchmarking. Marketing campaigns planning. Business planning and strategy."]},{"title":"Multimedia Project Management", "org":"Ecole Multimedia", "desc":["Activities and Societies: Multimedia Project Conception and Management.","Marketing and Media Strategy Conception.","Web Development Improvements."]},{"title":"Information and Communication Sciences", "org":"UNSA", "desc":["Activities and Societies: Marketing and Advertising.","Communication Plans and Audit.","Information and Communication Sciences Theories."]}];
@@ -19,16 +17,6 @@ html
           a(href="https://linkedin.com/in/yorickdemichelis") LinkedIn
         li
           a(href="https://ctrlaltdev.xyz") ctrlaltdev.xyz
-    section#projects
-      h2
-        span Projects
-      div
-        each project in projects
-          article
-            a(href=project.link)
-              h3= project.title
-            each desc in project.desc
-              p= desc
     section#experiences
       h2
         span Experiences
