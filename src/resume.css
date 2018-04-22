@@ -196,20 +196,18 @@ section {
   section article p {
     margin: 5pt 0;
     padding-left: 20pt;
-    font-size: 1em; }
+    font-size: 1em;
+    line-height: 1.2; }
+  section article .timeframe {
+    padding: 0; }
 
-#projects div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-  #projects div article {
-    flex: 0 1 auto;
-    align-self: stretch;
-    width: calc(100% / 3 - 20pt);
-    border-left: solid #000000 3pt;
-    padding-left: 10pt;
-    margin: 10pt 0; }
-    #projects div article h3 {
-      margin: 0 0 10pt; }
-    #projects div article p {
-      padding-left: 0; }
+#grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto; }
+  #grid-container #experiences {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1; }
+  #grid-container aside {
+    grid-column: 2 / 2;
+    grid-row: 1 / 1; }

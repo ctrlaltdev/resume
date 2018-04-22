@@ -1,6 +1,6 @@
-- var experiences = [{"title":"Web Project Manager", "org":"Defenseur des droits, French Prime Minister Services", "desc":["Web projects and service providers management: 10 websites launched, with 4 different providers.","Emailings: Newsletter and campaigns management."]},{"title":"DevOp", "org":"Freelance", "desc":["Development and deployment of web services: Visio web app for one to one interviews."]},{"title":"Customer Relations and Logistics Manager", "org":"NBM Groupe", "desc":["Customer relations management: before and after sales service.","Logistics: Parcels expedition and products supply management."]},{"title":"Volunteer Product Manager", "org":"Apache Magazine", "desc":["Functional design, development and deployment of the magazine website."]},{"title":"Social Media Executive", "org":"Viadeo", "desc":["Viadeo brand social media account management.","Social media campaigns planning."]},{"title":"Partnerships and Events Assistant", "org":"Viadeo", "desc":["Event planning and organization.","Emailing campaigns development and management.","Partnerships data analysis."]}];
+- var experiences = [{"title":"Web Project Manager", "org":"Defenseur des droits, French Prime Minister Services", "desc":["Web projects and service providers management: 10 websites launched, with 4 different providers.","Emailings: Newsletter and campaigns management."], "start":"Apr 2015", "end":"Apr 2018"},{"title":"DevOp", "org":"Freelance", "desc":["Development and deployment of web services: Visio web app for one to one interviews."],"start":"Sep 2016","end":"Mar 2018"},{"title":"Customer Relations and Logistics Manager", "org":"NBM Groupe", "desc":["Customer relations management: before and after sales service.","Logistics: Parcels expedition and products supply management."],"start":"Feb 2014","end":"Aug 2014"},{"title":"Volunteer Product Manager", "org":"Apache Magazine", "desc":["Functional design, development and deployment of the magazine website."],"start":"May 2012","end":"Apr 2015"},{"title":"Social Media Executive", "org":"Viadeo", "desc":["Viadeo brand social media accounts management.","Social media campaigns planning."],"start":"Oct 2012","end":"Sep 2013"},{"title":"Partnerships and Events Assistant", "org":"Viadeo", "desc":["Event planning and organization.","Emailing campaigns development and management.","Partnerships data analysis."],"start":"Feb 2011","end":"Oct 2012"}];
 
-- var education = [{"title":"Marketing, Communication and Internet", "org":"ESA3", "desc":["Market benchmarking. Marketing campaigns planning. Business planning and strategy."]},{"title":"M.S. in Multimedia Project Management", "org":"Ecole Multimedia", "desc":["Activities and Societies: Multimedia Project Conception and Management.","Marketing and Media Strategy Conception.","Web Development Improvements."]},{"title":"B.S. in Information and Communication Sciences", "org":"UNSA", "desc":["Activities and Societies: Marketing and Advertising.","Communication Plans and Audit.","Information and Communication Sciences Theories."]}];
+- var education = [{"title":"Marketing, Communication and Internet", "org":"ESA3", "desc":["Market benchmarking. Marketing campaigns planning. Business planning and strategy."],"year":"2013"},{"title":"M.S. in Multimedia Project Management", "org":"Ecole Multimedia", "desc":["Activities and Societies: Multimedia Project Conception and Management.","Marketing and Media Strategy Conception.","Web Development Improvements."],"year":"2012"},{"title":"B.S. in Information and Communication Sciences", "org":"UNSA", "desc":["Activities and Societies: Marketing and Advertising.","Communication Plans and Audit.","Information and Communication Sciences Theories."],"year":"2011"}];
 
 html
   head
@@ -20,21 +20,34 @@ html
     section#contact
       ul
         li
-          a(href="tel:+33677233414") +3367-723-3414
+          a(href="tel:+33677233414") +33 (0)67-723-3414
         li
           a(href="mailto:yorick@ctrlaltdev.xyz") yorick@ctrlaltdev.xyz
         li
-          a(href="https://ctrlaltdev.xyz/PGPKEY.txt") PGP key: 6B5A 7524
-    section#experiences
-      h2
-        span Experiences
-      each exp in experiences
-        article
-          h3
-            span= exp.title
-            = ' - ' + exp.org
-          each desc in exp.desc
-            p= desc
+          a(href="https://ctrlaltdev.xyz/PGPKEY.txt") PGP key: 0x6B5A7524
+    #grid-container
+      section#experiences
+        h2
+          span Experiences
+        each exp in experiences
+          article
+            h3
+              span= exp.title
+              = ' - ' + exp.org
+            p.timeframe
+              span= exp.start + ' - ' + exp.end
+            each desc in exp.desc
+              p= desc
+      aside
+        section#skills
+          h2
+            span Skills
+        section#tech
+          h2
+            span Tech
+        section#lang
+          h2
+            span Langs
     section#education
       h2
         span Education
@@ -43,5 +56,7 @@ html
           h3
             span= educ.title
             = ' - ' + educ.org
+          p.timeframe
+            span= educ.year
           each desc in educ.desc
             p= desc

@@ -67,19 +67,16 @@ section
       margin: 5pt 0
       padding-left: 20pt
       font-size: 1em
-#projects
-  div
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-between
-    article
-      flex: 0 1 auto
-      align-self: stretch
-      width: calc(100% / 3 - 20pt)
-      border-left: solid #000000 3pt
-      padding-left: 10pt
-      margin: 10pt 0
-      h3
-        margin: 0 0 10pt
-      p
-        padding-left: 0
+      line-height: 1.2
+    .timeframe
+      padding: 0
+#grid-container
+  display: grid
+  grid-template-columns: 3fr 1fr
+  grid-template-rows: auto
+  #experiences
+    grid-column: 1 / 1
+    grid-row: 1 / 1
+  aside
+    grid-column: 2 / 2
+    grid-row: 1 / 1
