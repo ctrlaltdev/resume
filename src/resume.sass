@@ -21,7 +21,7 @@ header
     flex: 1 0 auto
     text-transform: uppercase
     font-weight: 600
-    font-size: 3em
+    font-size: 2.4em
   ul
     flex: 1 0 auto
     display: flex
@@ -46,11 +46,10 @@ section#contact
       margin: 5pt 5pt 0 0
       text-align: left
 section
-  margin-top: 20pt
   h2
     text-transform: uppercase
     font-weight: 600
-    font-size: 1.6em
+    font-size: 1.2em
     margin: 20pt 0 10pt
     span
       padding: 5pt 20pt
@@ -59,10 +58,12 @@ section
   article
     h3
       text-transform: uppercase
-      font-size: 1.2em
-      margin: 20pt 0 5pt
+      font-size: 1.1em
+      margin-bottom: 5pt
       span
         font-weight: 600
+    h3:first-of-type
+      margin-top: 20pt
     p
       margin: 5pt 0
       padding-left: 20pt
@@ -80,3 +81,23 @@ section
   aside
     grid-column: 2 / 2
     grid-row: 1 / 1
+aside
+  h2
+    box-sizing: border-box
+    font-size: 1em
+    padding: 2pt 10pt
+    background-color: black
+    color: white
+  ul
+    list-style: none
+    li
+      margin-bottom: 10px
+    li.col
+      display: flex
+      flex-flow: nowrap
+      span.name,
+      span.level
+        flex: 0 0 auto
+        width: 50%
+      span.level
+        text-align: right

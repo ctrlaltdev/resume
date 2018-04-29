@@ -150,7 +150,7 @@ header {
     flex: 1 0 auto;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 3em; }
+    font-size: 2.4em; }
   header ul {
     flex: 1 0 auto;
     display: flex;
@@ -176,30 +176,34 @@ section#contact {
       margin: 5pt 5pt 0 0;
       text-align: left; }
 
-section {
+section h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2em;
+  margin: 20pt 0 10pt; }
+  section h2 span {
+    padding: 5pt 20pt;
+    background-color: black;
+    color: white; }
+
+section article h3 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  margin-bottom: 5pt; }
+  section article h3 span {
+    font-weight: 600; }
+
+section article h3:first-of-type {
   margin-top: 20pt; }
-  section h2 {
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 1.6em;
-    margin: 20pt 0 10pt; }
-    section h2 span {
-      padding: 5pt 20pt;
-      background-color: black;
-      color: white; }
-  section article h3 {
-    text-transform: uppercase;
-    font-size: 1.2em;
-    margin: 20pt 0 5pt; }
-    section article h3 span {
-      font-weight: 600; }
-  section article p {
-    margin: 5pt 0;
-    padding-left: 20pt;
-    font-size: 1em;
-    line-height: 1.2; }
-  section article .timeframe {
-    padding: 0; }
+
+section article p {
+  margin: 5pt 0;
+  padding-left: 20pt;
+  font-size: 1em;
+  line-height: 1.2; }
+
+section article .timeframe {
+  padding: 0; }
 
 #grid-container {
   display: grid;
@@ -211,3 +215,24 @@ section {
   #grid-container aside {
     grid-column: 2 / 2;
     grid-row: 1 / 1; }
+
+aside h2 {
+  box-sizing: border-box;
+  font-size: 1em;
+  padding: 2pt 10pt;
+  background-color: black;
+  color: white; }
+
+aside ul {
+  list-style: none; }
+  aside ul li {
+    margin-bottom: 10px; }
+  aside ul li.col {
+    display: flex;
+    flex-flow: nowrap; }
+    aside ul li.col span.name,
+    aside ul li.col span.level {
+      flex: 0 0 auto;
+      width: 50%; }
+    aside ul li.col span.level {
+      text-align: right; }
