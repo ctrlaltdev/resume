@@ -144,37 +144,18 @@ body {
   color: black; }
 
 header {
-  display: flex;
-  justify-content: space-between; }
+  padding: 10pt;
+  background-color: #3D3D3D; }
   header h1 {
-    flex: 1 0 auto;
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 2.4em; }
-  header ul {
-    flex: 1 0 auto;
-    display: flex;
-    justify-content: flex-end; }
-    header ul li {
-      flex: 0 0 auto;
-      margin: 5pt 0 0 5pt;
-      text-align: right; }
-      header ul li a {
-        border-bottom: solid #000000 2pt; }
-      header ul li a[href^="https://github"] {
-        border-bottom: solid #0366d6 2pt; }
-      header ul li a[href^="https://linkedin"] {
-        border-bottom: solid #0091ca 2pt; }
-
-section#contact {
-  margin-top: 0pt; }
-  section#contact ul {
-    display: flex;
-    justify-content: flex-start; }
-    section#contact ul li {
-      flex: 0 0 auto;
-      margin: 5pt 5pt 0 0;
-      text-align: left; }
+    font-size: 2.4em;
+    color: white;
+    margin-bottom: 5pt; }
+  header h2 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: white; }
 
 section h2 {
   text-transform: uppercase;
@@ -182,8 +163,8 @@ section h2 {
   font-size: 1.2em;
   margin: 20pt 0 10pt; }
   section h2 span {
-    padding: 5pt 20pt;
-    background-color: black;
+    padding: 3pt 20pt;
+    background-color: #3D3D3D;
     color: white; }
 
 section article h3 {
@@ -210,17 +191,20 @@ section article .timeframe {
   grid-template-columns: 3fr 1fr;
   grid-template-rows: auto; }
   #grid-container #experiences {
-    grid-column: 1 / 1;
-    grid-row: 1 / 1; }
+    grid-column: 1 / 2;
+    grid-row: 1 / 2; }
+  #grid-container #education {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3; }
   #grid-container aside {
-    grid-column: 2 / 2;
-    grid-row: 1 / 1; }
+    grid-column: 2 / 3;
+    grid-row: 1 / 3; }
 
 aside h2 {
   box-sizing: border-box;
   font-size: 1em;
-  padding: 2pt 10pt;
-  background-color: black;
+  padding: 3pt 10pt;
+  background-color: #3D3D3D;
   color: white; }
 
 aside ul {
@@ -236,3 +220,14 @@ aside ul {
       width: 50%; }
     aside ul li.col span.level {
       text-align: right; }
+      aside ul li.col span.level span {
+        color: #3D3D3D; }
+      aside ul li.col span.level span.light {
+        color: #CCCCCC; }
+
+aside #contact span,
+aside #links span {
+  display: block;
+  line-height: 1.2;
+  text-transform: uppercase;
+  font-weight: 600; }

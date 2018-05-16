@@ -15,36 +15,19 @@ body
 	color: black
 
 header
-  display: flex
-  justify-content: space-between
+  padding: 10pt
+  background-color: #3D3D3D
   h1
-    flex: 1 0 auto
     text-transform: uppercase
     font-weight: 600
     font-size: 2.4em
-  ul
-    flex: 1 0 auto
-    display: flex
-    justify-content: flex-end
-    li
-      flex: 0 0 auto
-      margin: 5pt 0 0 5pt
-      text-align: right
-      a
-        border-bottom: solid #000000 2pt
-      a[href^="https://github"]
-        border-bottom: solid #0366d6 2pt
-      a[href^="https://linkedin"]
-        border-bottom: solid #0091ca 2pt
-section#contact
-  margin-top: 0pt
-  ul
-    display: flex
-    justify-content: flex-start
-    li
-      flex: 0 0 auto
-      margin: 5pt 5pt 0 0
-      text-align: left
+    color: white
+    margin-bottom: 5pt
+  h2
+    text-transform: uppercase
+    font-size: 1.4em
+    color: white
+
 section
   h2
     text-transform: uppercase
@@ -52,8 +35,8 @@ section
     font-size: 1.2em
     margin: 20pt 0 10pt
     span
-      padding: 5pt 20pt
-      background-color: black
+      padding: 3pt 20pt
+      background-color: #3D3D3D
       color: white
   article
     h3
@@ -76,17 +59,20 @@ section
   grid-template-columns: 3fr 1fr
   grid-template-rows: auto
   #experiences
-    grid-column: 1 / 1
-    grid-row: 1 / 1
+    grid-column: 1 / 2
+    grid-row: 1 / 2
+  #education
+    grid-column: 1 / 2
+    grid-row: 2 / 3
   aside
-    grid-column: 2 / 2
-    grid-row: 1 / 1
+    grid-column: 2 / 3
+    grid-row: 1 / 3
 aside
   h2
     box-sizing: border-box
     font-size: 1em
-    padding: 2pt 10pt
-    background-color: black
+    padding: 3pt 10pt
+    background-color: #3D3D3D
     color: white
   ul
     list-style: none
@@ -101,3 +87,14 @@ aside
         width: 50%
       span.level
         text-align: right
+        span
+          color: #3D3D3D
+        span.light
+          color: #CCCCCC
+  #contact,
+  #links
+    span
+      display: block
+      line-height: 1.2
+      text-transform: uppercase
+      font-weight: 600

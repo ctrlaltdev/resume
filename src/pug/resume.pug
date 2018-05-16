@@ -1,12 +1,18 @@
-- var experiences = [{"title":["Web Project Manager"], "org":"French Prime Minister Services", "desc":["Web projects and service providers management: 10 websites launched, with 4 different providers.","Emailings: Newsletter and campaign management."], "start":"Apr 2015", "end":"Apr 2018"},{"title":["DevOp"], "org":"Freelance", "desc":["Development and deployment of web services: Visio web app for one to one interviews."],"start":"Sep 2016","end":"Mar 2018"},{"title":["Customer Relations and Logistics Manager"], "org":"NBM Groupe", "desc":["Customer relations management: before and after sales service.","Logistics: Parcel expedition and product supply management."],"start":"Feb 2014","end":"Aug 2014"},{"title":["Volunteer Product Manager"], "org":"Apache Magazine", "desc":["Functional design, development and deployment of the magazine website."],"start":"May 2012","end":"Apr 2015"},{"title":["Partnerships and Events Assistant","Social Media Executive"], "org":"Viadeo", "desc":["Viadeo's brand social media accounts management and campaign planning.","Event planning and organization.","Emailing campaign strategy and management."],"start":"Feb 2011","end":"Sep 2013"}];
+- var experiences = [{"title":["Web Project Manager"], "org":"French Prime Minister Services", "desc":["Web projects and service providers management: 10 websites launched, with 4 different providers.","Emailings: Newsletter and campaign management."], "start":"Apr 2015", "end":"Apr 2018"},{"title":["DevOp"], "org":"Freelance", "desc":["Development and deployment of web services: Visio web app for one to one interviews."],"start":"Sep 2016","end":"Mar 2018"},{"title":["Customer Relations and Logistics Manager"], "org":"NBM Groupe", "desc":["Customer relations management: before and after sales service.","Logistics: Parcel expedition and product supply management."],"start":"Feb 2014","end":"Aug 2014"},{"title":["Volunteer Product Manager"], "org":"Apache Magazine", "desc":["Functional design, development and deployment of the magazine website."],"start":"May 2012","end":"Apr 2015"},{"title":["Partnerships and Events Assistant","Social Media Executive"], "org":"Viadeo", "desc":["Viadeo's brand social media accounts management and campaign planning.","Event planning and organization."],"start":"Feb 2011","end":"Sep 2013"}];
 
-- var education = [{"title":"Marketing, Communication and Internet", "org":"ESA3", "desc":["Market benchmarking. Marketing campaign planning. Business planning and strategy."],"year":"2013"},{"title":"M.S. in Multimedia Project Management", "org":"Ecole Multimedia", "desc":["Activities and Societies: Multimedia project definition, planning and execution. Marketing and media strategy. Web development."],"year":"2012"},{"title":"B.S. in Information and Communication Sciences", "org":"UNSA", "desc":["Activities and Societies: Marketing and Advertising. Communication Plans and Audit. Mass communications."],"year":"2011"}];
+- var education = [{"title":"Marketing, Communication and Internet", "org":"ESA3", "desc":["Market benchmarking. Marketing campaign planning. Business planning and strategy."],"year":"2013"},{"title":"M.S. in Multimedia Project Management", "org":"Ecole Multimedia", "desc":["Multimedia project definition, planning and execution. Marketing and media strategy. Web development."],"year":"2012"},{"title":"B.S. in Information and Communication Sciences", "org":"UNSA", "desc":["Marketing and Advertising. Communication Plans and Audit. Mass communications."],"year":"2011"}];
+
+- var contact = [{name:"Phone", text:"323-529-5721", link:"tel:+13235295127"}, {name:"Email", text:"yorick@ctrlaltdev.xyz", link:"mailto:yorick@ctrlaltdev.xyz"}, {name:"PGP Key", text:"0x6B5A7524", link:"https://ctrlaltdev.xyz/PGPKEY.txt"}];
+
+- var links = [{name:"Github", text:"github/ctrlaltdev", link:"https://github.com/ctrlaltdev"}, {name:"LinkedIn", text:"linkedin/yorickdemichelis", link:"https://linkedin.com/in/yorickdemichelis"}, {name:"Website", text:"ctrlaltdev.xyz", link:"https://ctrlaltdev.xyz"}];
 
 - var skills = ["Project Management", "Product Development", "Problem Solving", "Communication", "Team Coordination", "Web Development"];
 
 - var techs = [{"name":"HTML, CSS", "level":5},{"name":"JavaScript", "level":4},{"name":"NodeJS", "level":4},{"name":"PHP", "level":4},{"name":"Python", "level":3},{"name":"Ruby", "level":2}];
 
 - var langs = [{"name":"French", "level":"Native"},{"name":"English", "level":"Fluent"},{"name":"Spanish", "level":"Beginner"}];
+
+- var info = {};
 
 html
   head
@@ -16,21 +22,10 @@ html
   body
     header
       h1 Yorick Demichelis
-      ul.links
-        li
-          a(href="https://github.com/ctrlaltdev") Github
-        li
-          a(href="https://linkedin.com/in/yorickdemichelis") LinkedIn
-        li
-          a(href="https://ctrlaltdev.xyz") ctrlaltdev.xyz
-    section#contact
-      ul
-        li
-          a(href="tel:+13235295721") 323-529-5721
-        li
-          a(href="mailto:yorick@ctrlaltdev.xyz") yorick@ctrlaltdev.xyz
-        li
-          a(href="https://ctrlaltdev.xyz/PGPKEY.txt") PGP key: 0x6B5A7524
+      if info.position
+        h2= info.position
+      else
+        h2 &nbsp
     #grid-container
       section#experiences
         h2
@@ -45,7 +40,33 @@ html
               span= exp.start + ' - ' + exp.end
             each desc in exp.desc
               p= desc
+      section#education
+        h2
+          span Education
+        each educ in education
+          article
+            h3
+              span= educ.title
+              = ' - ' + educ.org
+            p.timeframe
+              span= educ.year
+            each desc in educ.desc
+              p= desc
       aside
+        section#contact
+          h2 Contact
+          ul
+            each item in contact
+              li
+                span= item.name
+                a(href= item.link)= item.text
+        section#links
+          h2 Links
+          ul
+            each link in links
+              li
+                span= link.name
+                a(href= link.link)= link.text
         section#skills
           h2 Skills
           ul
@@ -59,9 +80,14 @@ html
               li.col
                 span.name= tech.name
                 span.level
+                  - var lvlfiller = 0;
+                  - var fulllvl = 5 - tech.level;
+                  while lvlfiller < fulllvl
+                    span.light ■
+                    -lvlfiller++;
                   - var lvl = 0;
                   while lvl < tech.level
-                    span ▐
+                    span ■
                     - lvl++;
         section#lang
           h2 Langs
@@ -70,15 +96,3 @@ html
               li.col
                 span.name= lang.name
                 span.level= lang.level
-    section#education
-      h2
-        span Education
-      each educ in education
-        article
-          h3
-            span= educ.title
-            = ' - ' + educ.org
-          p.timeframe
-            span= educ.year
-          each desc in educ.desc
-            p= desc
