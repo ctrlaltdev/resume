@@ -5,8 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css && ./node_modules/pug-cli/index.js -o ./src/ -P ./src/pug/resume.pug",
-    "start": "electron .",
+    "compile": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css && ./node_modules/pug-cli/index.js -o ./src/ -P ./src/pug/resume.pug",
+    "start": "./node_modules/electron/dist/electron index.js",
     "sass": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css",
     "pug": "./node_modules/pug-cli/index.js -o ./src/ -P ./src/pug/resume.pug"
   },

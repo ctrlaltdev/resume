@@ -135,7 +135,7 @@ a {
 html,
 body {
   font-size: 10pt;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   height: 100%;
   width: 100%;
   background-color: transparent;
@@ -149,17 +149,21 @@ header {
   header h1 {
     text-transform: uppercase;
     font-weight: 600;
+    font-family: "Titillium Web", Arial, sans-serif;
     font-size: 2.4em;
     color: white;
     margin-bottom: 5pt; }
   header h2 {
     text-transform: uppercase;
+    font-family: "Titillium Web", Arial, sans-serif;
     font-size: 1.4em;
     color: white; }
 
 section h2 {
   text-transform: uppercase;
   font-weight: 600;
+  font-family: "Titillium Web", Arial, sans-serif;
+  color: #3D3D3D;
   font-size: 1.2em;
   margin: 20pt 0 10pt; }
   section h2 span {
@@ -170,12 +174,15 @@ section h2 {
 section article h3 {
   text-transform: uppercase;
   font-size: 1.1em;
+  font-family: "Titillium Web", Arial, sans-serif;
   margin-bottom: 5pt; }
   section article h3 span {
-    font-weight: 600; }
+    font-weight: 600;
+    font-family: "Titillium Web", Arial, sans-serif;
+    color: #3D3D3D; }
 
 section article h3:first-of-type {
-  margin-top: 20pt; }
+  margin-top: 10pt; }
 
 section article p {
   margin: 5pt 0;
@@ -189,7 +196,8 @@ section article .timeframe {
 #grid-container {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: auto; }
+  grid-template-rows: auto;
+  grid-column-gap: 20pt; }
   #grid-container #experiences {
     grid-column: 1 / 2;
     grid-row: 1 / 2; }
@@ -230,4 +238,6 @@ aside #links span {
   display: block;
   line-height: 1.2;
   text-transform: uppercase;
-  font-weight: 600; }
+  font-weight: 600;
+  font-family: "Titillium Web", Arial, sans-serif;
+  color: #3D3D3D; }
