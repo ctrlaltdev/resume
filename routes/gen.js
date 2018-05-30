@@ -3,8 +3,6 @@ var router = express.Router();
 
 router.post('/', function(req, res, next) {
 
-  console.log(req.body);
-
   let info = {};
   if(req.body["position"] !== ""){
     info.position = req.body["position"];
@@ -16,6 +14,10 @@ router.post('/', function(req, res, next) {
       value: req.body["personalinfo.phone.value"]
     },
     email: req.body["personalinfo.email"],
+    PGPKEY: {
+      txt: req.body["personalinfo.PGPKEY.txt"],
+      url: req.body["personalinfo.PGPKEY.url"]
+    },
     github: req.body["personalinfo.github"],
     linkedin: req.body["personalinfo.linkedin"],
     website: req.body["personalinfo.website"]
@@ -97,12 +99,6 @@ router.post('/', function(req, res, next) {
     education.push(educ);
     j++;
   }
-
-  console.log(experiences);
-  console.log(education);
-  console.log(langs);
-  console.log(techs);
-  console.log(skills);
 
   res.render('resume', {
     title: 'Resume',

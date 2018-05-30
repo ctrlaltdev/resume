@@ -1,8 +1,3 @@
-- var contact = [{name:"Phone", text:"323-529-5721", link:"tel:+13235295127"}, {name:"Email", text:"yorick@ctrlaltdev.xyz", link:"mailto:yorick@ctrlaltdev.xyz"}, {name:"PGP Key", text:"0x6B5A7524", link:"https://ctrlaltdev.xyz/PGPKEY.txt"}];
-
-- var links = [{name:"Github", text:"github/ctrlaltdev", link:"https://github.com/ctrlaltdev"}, {name:"LinkedIn", text:"linkedin/yorickdemichelis", link:"https://linkedin.com/in/yorickdemichelis"}, {name:"Website", text:"ctrlaltdev.xyz", link:"https://ctrlaltdev.xyz"}];
-
-
 html
   head
     meta(charset="utf-8")
@@ -23,39 +18,47 @@ html
           article
             each title in exp.title
               h3
-                span= title
-                = ' - ' + exp.org
+                span #{title} - #{exp.org}
             p.timeframe
-              span= exp.start + ' - ' + exp.end
+              span #{exp.start} - #{exp.end} / #{exp.location}
             each desc in exp.desc
-              p= desc
+              p #{desc}
       section#education
         h2
           span Education
         each educ in education
           article
             h3
-              span= educ.title
-              = ' - ' + educ.org
+              span #{educ.title} - #{educ.org}
             p.timeframe
-              span= educ.year
+              span #{educ.year} / #{educ.location}
             each desc in educ.desc
-              p= desc
+              p #{desc}
       aside
         section#contact
           h2 Contact
           ul
-            each item in contact
-              li
-                span= item.name
-                a(href= item.link)= item.text
+            li
+              span Phone
+              a(href="tel:"+personalinfo.phone.value) #{personalinfo.phone.txt}
+            li
+              span Email
+              a(href="mailto:"+personalinfo.email) #{personalinfo.email}
+            li
+              span PGPKEY
+              a(href="https://"+personalinfo.PGPKEY.url) #{personalinfo.PGPKEY.txt}
         section#links
           h2 Links
           ul
-            each link in links
-              li
-                span= link.name
-                a(href= link.link)= link.text
+            li
+              span GitHub
+              a(href="https://github.com/"+personalinfo.github) github/#{personalinfo.github}
+            li
+              span LinkedIn
+              a(href="https://linkedin.com/in/"+personalinfo.linkedin) linkedin/#{personalinfo.linkedin}
+            li
+              span Website
+              a(href="https://"+personalinfo.website) #{personalinfo.website}
         section#skills
           h2 Skills
           ul

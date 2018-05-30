@@ -70,6 +70,7 @@ let win
 function createWindow () {
   win = new BrowserWindow({width: 800, height: 600, icon: __dirname + '/public/img/icon.png'})
   win.setMenu(null)
+  //win.webContents.openDevTools()
 
   win.loadURL(url.format({
     pathname: "localhost:" + port,
