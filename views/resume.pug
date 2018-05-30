@@ -19,7 +19,7 @@ html
             each title in exp.title
               h3
                 span #{title}
-                | - #{exp.org}
+                | #{" - "}#{exp.org}
             p.timeframe
               span #{exp.start} - #{exp.end} / #{exp.location}
             each desc in exp.desc
@@ -31,7 +31,7 @@ html
           article
             h3
               span #{educ.title}
-              | - #{educ.org}
+              | #{" - "}#{educ.org}
             p.timeframe
               span #{educ.year} / #{educ.location}
             each desc in educ.desc
