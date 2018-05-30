@@ -1,4 +1,4 @@
-*.pdf
+public/pdf/*.pdf
 
 # Logs
 logs
