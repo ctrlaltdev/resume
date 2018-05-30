@@ -1,69 +1,125 @@
-const {app, BrowserWindow} = require('electron')
-  const path = require('path')
-  const url = require('url')
-  const fs = require('fs')
-  
-  // Keep a global reference of the window object, if you don't, the window will
-  // be closed automatically when the JavaScript object is garbage collected.
-  let win
-  
-  function createWindow () {
-    // Create the browser window.
-    win = new BrowserWindow({width: 600, height: 800})
-  
-    // and load the index.html of the app.
-    win.loadURL(url.format({
-      pathname: path.join(__dirname, 'src/resume.html'),
-      protocol: 'file:',
-      slashes: true
-    }))
+#!/usr/bin/env node
 
-    setTimeout(printResume, 3000)
-  
-    // Emitted when the window is closed.
-    win.on('closed', () => {
-      // Dereference the window object, usually you would store windows
-      // in an array if your app supports multi windows, this is the time
-      // when you should delete the corresponding element.
-      win = null
-    })
+var srv = require('./srv');
+var debug = require('debug')('test:server');
+var http = require('http');
+
+var port = normalizePort(process.env.PORT || '3000');
+srv.set('port', port);
+
+var server = http.createServer(srv);
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    return val;
   }
+
+  if (port >= 0) {
+    return port;
+  }
+
+  return false;
+}
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
+
+
+
+const {app, BrowserWindow} = require('electron')
+const path = require('path')
+const url = require('url')
+const fs = require('fs')
+
+let win
   
-  // This method will be called when Electron has finished
-  // initialization and is ready to create browser windows.
-  // Some APIs can only be used after this event occurs.
-  app.on('ready', createWindow)
-  
-  // Quit when all windows are closed.
-  app.on('window-all-closed', () => {
-    // On macOS it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
-      app.quit()
+function createWindow () {
+  win = new BrowserWindow({width: 800, height: 600, icon: __dirname + '/public/img/icon.png'})
+  win.setMenu(null)
+
+  win.loadURL(url.format({
+    pathname: "localhost:" + port,
+    protocol: 'http:',
+    slashes: true
+  }))
+
+  win.webContents.on('dom-ready', (event) => {
+    let hist = event.sender.webContents.history;
+    let lastpage = hist[hist.length-1];
+    if(lastpage.slice(-4) == "gen/"){
+      setTimeout(printResume, 1000);
     }
   })
-  
-  app.on('activate', () => {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (win === null) {
-      createWindow()
-    }
+
+  win.on('closed', () => {
+    win = null
   })
+}
+
+app.on('ready', createWindow)
   
-  // In this file you can include the rest of your app's specific main process
-  // code. You can also put them in separate files and require them here.
-  function printResume() {
-    let opts = {
-      pageSize: "Letter",
-      printBackground: true
-    }
-    win.webContents.printToPDF(opts, (error, data) => {
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
+  
+app.on('activate', () => {
+  if (win === null) {
+    createWindow()
+  }
+})
+  
+function printResume() {
+  let opts = {
+    pageSize: "Letter",
+    printBackground: true
+  }
+  win.webContents.printToPDF(opts, (error, data) => {
+    if (error) throw error
+    fs.writeFile(__dirname + '/public/pdf/resume.pdf', data, (error) => {
       if (error) throw error
-      fs.writeFile(__dirname + '/dest/resume.pdf', data, (error) => {
-        if (error) throw error
-        console.log('Write PDF successfully.')
-        win.close();
-      })
+      console.log('ResumeSaved.')
+      
+      win.loadURL(url.format({
+        pathname: "localhost:" + port + "/pdf",
+        protocol: 'http:',
+        slashes: true
+      }))
     })
-  }
+  })
+}

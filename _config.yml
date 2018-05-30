@@ -1,0 +1,8 @@
+remote_theme: ctrlaltdev/ctrlaltdev-theme
+theme_settings:
+  title: "Resume"
+  description: "Resume Generator"
+github: "ctrlaltdev/resume
+sass:
+  sass_dir: _sass
+style: :compressed

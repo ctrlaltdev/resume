@@ -5,17 +5,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css && ./node_modules/pug-cli/index.js -o ./src/ -P ./src/pug/resume.pug",
-    "start": "./node_modules/electron/dist/electron index.js",
-    "sass": "./node_modules/.bin/node-sass ./src/resume.sass ./src/resume.css",
-    "pug": "./node_modules/pug-cli/index.js -o ./src/ -P ./src/pug/resume.pug"
+    "start": "electron .",
+    "sass": "./node_modules/.bin/node-sass --output ./public/style/ --source-map true --source-map-contents ./public/style/",
+    "test": "exit 0"
   },
   "author": "Yorick <yorick@ctrlaltdev.xyz>",
-  "license": "MPL-2.0",
-  "devDependencies": {
-    "electron": "^2.0.1",
-    "node-sass": "^4.9.0",
-    "pug-cli": "^1.0.0-alpha6"
+  "licenses": [
+    {
+      "type": "MPL-2.0",
+      "url": "https://github.com/ctrlaltdev/resume/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ctrlaltdev/resume.git"
   },
-  "dependencies": {}
+  "bugs": {
+    "url": "https://github.com/ctrlaltdev/resume/issues"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "debug": "^3.1.0",
+    "electron": "^2.0.2",
+    "express": "^4.16.3",
+    "http-errors": "^1.6.3",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
 }
