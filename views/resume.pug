@@ -61,11 +61,12 @@ html
             li
               span Website
               a(href="https://"+personalinfo.website) #{personalinfo.website}
-        section#skills
-          h2 Skills
-          ul
-            each skill in skills
-              li= skill
+        if skills
+          section#skills
+            h2 Skills
+            ul
+              each skill in skills
+                li= skill
 
         section#tech
           h2 Tech

@@ -49,14 +49,17 @@ router.post('/', function(req, res, next) {
     langs.push({name: req.body["langs"], level: req.body["langlvls"]});
   }
 
-  let skills = [];
-  if (Array.isArray(req.body["skills"])) {
-    for(z=0 ; z < req.body["skills"].length ; z++) {
-      let skill = req.body["skills"][z];
-      skills.push(skill);
+  let skills = null
+  if(req.body["skills"]) {
+    skills = [];
+    if (Array.isArray(req.body["skills"])) {
+      for(z=0 ; z < req.body["skills"].length ; z++) {
+        let skill = req.body["skills"][z];
+        skills.push(skill);
+      }
+    } else {
+      skills.push(req.body["skills"]);
     }
-  } else {
-    skills.push(req.body["skills"]);
   }
 
   let experiences = [];
