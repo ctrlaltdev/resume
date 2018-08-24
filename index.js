@@ -68,7 +68,7 @@ const fs = require('fs')
 let win
   
 function createWindow () {
-  win = new BrowserWindow({width: 800, height: 600, icon: __dirname + '/public/img/icon.png'})
+  win = new BrowserWindow({width: 800, height: 600})
   win.setMenu(null)
   //win.webContents.openDevTools()
 
