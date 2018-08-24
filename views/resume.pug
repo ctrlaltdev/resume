@@ -73,17 +73,7 @@ html
           ul
             each tech in techs
               li.col
-                span.name= tech.name
-                span.level
-                  - var lvlfiller = 0;
-                  - var fulllvl = 5 - tech.level;
-                  while lvlfiller < fulllvl
-                    span.light ■
-                    -lvlfiller++;
-                  - var lvl = 0;
-                  while lvl < tech.level
-                    span ■
-                    - lvl++;
+                span.name= tech
         section#lang
           h2 Langs
           ul

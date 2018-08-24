@@ -23,17 +23,17 @@ router.post('/', function(req, res, next) {
     website: req.body["personalinfo.website"]
   };
 
-  let techs = [];
-  if (Array.isArray(req.body["techs"])) {
-    for(x=0 ; x < req.body["techs"].length || x < req.body["techlvls"].length ; x++) {
-      let tech = {
-        name: req.body["techs"][x],
-        level: req.body["techlvls"][x]
-      };
-      techs.push(tech);
+  let techs = null
+  if (req.body["techs"]) {
+    techs = [];
+    if (Array.isArray(req.body["techs"])) {
+      for(x=0 ; x < req.body["techs"].length ; x++) {
+        let tech = req.body["techs"][x];
+        techs.push(tech);
+      }
+    } else {
+      techs.push(req.body["techs"]);
     }
-  } else {
-    techs.push({name: req.body["techs"], level: req.body["techlvls"]});
   }
 
   let langs = [];

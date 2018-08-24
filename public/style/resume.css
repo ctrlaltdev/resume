@@ -171,27 +171,26 @@ section h2 {
     background-color: #3D3D3D;
     color: white; }
 
-section article h3 {
-  text-transform: uppercase;
-  font-size: 1.1em;
-  font-family: "Titillium Web", Arial, sans-serif;
-  margin-bottom: 5pt; }
-  section article h3 span {
-    font-weight: 600;
+section article {
+  margin-bottom: 20pt; }
+  section article h3 {
+    text-transform: uppercase;
+    font-size: 1.1em;
     font-family: "Titillium Web", Arial, sans-serif;
-    color: #3D3D3D; }
-
-section article h3:first-of-type {
-  margin-top: 10pt; }
-
-section article p {
-  margin: 5pt 0;
-  padding-left: 20pt;
-  font-size: 1em;
-  line-height: 1.2; }
-
-section article .timeframe {
-  padding: 0; }
+    margin-bottom: 5pt; }
+    section article h3 span {
+      font-weight: 600;
+      font-family: "Titillium Web", Arial, sans-serif;
+      color: #3D3D3D; }
+  section article h3:first-of-type {
+    margin-top: 10pt; }
+  section article p {
+    margin: 5pt 0;
+    padding-left: 20pt;
+    font-size: 1em;
+    line-height: 1.2; }
+  section article .timeframe {
+    padding: 0; }
 
 #grid-container {
   display: grid;
@@ -222,16 +221,9 @@ aside ul {
   aside ul li.col {
     display: flex;
     flex-flow: nowrap; }
-    aside ul li.col span.name,
-    aside ul li.col span.level {
+    aside ul li.col span.name {
       flex: 0 0 auto;
-      width: 50%; }
-    aside ul li.col span.level {
-      text-align: right; }
-      aside ul li.col span.level span {
-        color: #3D3D3D; }
-      aside ul li.col span.level span.light {
-        color: #CCCCCC; }
+      width: 100%; }
 
 aside #contact span,
 aside #links span {

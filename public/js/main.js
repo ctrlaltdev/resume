@@ -61,17 +61,7 @@ function addTech() {
   input.setAttribute('placeholder', 'Tech');
   input.setAttribute('name', 'techs');
 
-  let range = document.createElement('input');
-  range.setAttribute('type', 'range');
-  range.setAttribute('list', 'lvls');
-  range.setAttribute('placeholder', 'Level');
-  range.setAttribute('name', 'techlvls');
-  range.setAttribute('min', '0');
-  range.setAttribute('max', '5');
-  range.setAttribute('step', '1');
-
   document.querySelector('fieldset.tech').appendChild(input);
-  document.querySelector('fieldset.tech').appendChild(range);
 }
 
 function addSkill() {
