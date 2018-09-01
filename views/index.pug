@@ -8,15 +8,33 @@ block content
 
   - var skills = ["SCRUM", "Agile", "Waterfall", "Project Management", "Product Management"];
 
-  - var experiences = [{title:["Frontend Developer"], org:"Apple", desc:["Contract via Hogarth Worldwide"],start:"Aug 2018",end:"Sep 2018", location: "Cupertino, CA"},{title:["Web Developer"], org:"Freelance", desc:["Development and deployment of web services: Visio web app for one to one interviews, campaign landing pages, event websites."],start:"Sep 2016",end:"-", location: "Paris, France"},{title:["Web Project Manager / Developer"], org:"French Prime Minister Services", desc:["Web projects management and development: 10+ websites and web services launched.","Emailing: Use of MJML templating language and trigger APIs."], start:"Apr 2015", end:"Apr 2018", location: "Paris, France"},{title:["Customer Relations and Logistics Manager"], org:"NBM Groupe", desc:[],start:"Feb 2014",end:"Aug 2014", location: "Paris, France"},{title:["Product Manager / Developer"], org:"Apache Magazine", desc:["Functional design, development and deployment of the magazine website (Wordpress)."],start:"May 2012",end:"Apr 2015", location: "Paris, France"},{title:["Partnerships and Events Assistant","Social Media Executive"], org:"Viadeo", desc:[],start:"Feb 2011",end:"Sep 2013", location: "Paris, France"}];
-
   - var education = [{title:"Marketing, Communication and Internet", org:"ESA3", desc:[],"year":"2013", location: "Paris, France"},{title:"M.S. in Multimedia Project Management", org:"Ecole Multimedia", desc:[],"year":"2012", location: "Paris, France"},{title:"B.S. in Information and Communications", org:"UNSA", desc:[],"year":"2011", location: "Nice, France"}];
 
   h1 Resume Generator
 
   form(action="/gen/", method="POST", name="resume")
-    #info
-      input(type="text", placeholder="Position", name="position")
+    #personalinfo
+      h2 Personal Info
+      label name
+      input(type="text", class="required", placeholder="name", name="personalinfo.name.txt")
+      label title  ( optional )
+      input(type="text", placeholder="title", name="personalinfo.title.txt")
+      label phone  ( optional )
+      input(type="phone", placeholder="XXX XXX XXXX", name="personalinfo.phone.txt")
+      label email  ( optional )
+      input(type="email", placeholder="user@host.tld", name="personalinfo.email")
+      label pgp key ( optional )
+      input(type="text", placeholder="0xXXXXXXXX", name="personalinfo.PGPKEY.txt")
+      label pgp url ( optional )
+      input(type="text", placeholder="domain.tld/PGPKEY.txt", name="personalinfo.PGPKEY.url")
+      
+
+    #links
+      h2 Links
+      input(type="github", placeholder="githubhandle", name="links.github")
+      input(type="linkedin", placeholder="linkedinshorturl", name="links.linkedin")
+      input(type="website", placeholder="hostname.tld", name="links.website")
+
     
     #lang
       h2 Languages
@@ -100,16 +118,5 @@ block content
             button(type="button")#btneducdesc.more +
           - j++;
       button(type="button")#btneduc.more +
-
-    #personalinfo
-      h2 Personal Info
-      input(type="phone", placeholder="XXX XXX XXXX", value="323 529 5127", name="personalinfo.phone.txt")
-      input(type="phone", placeholder="+XXXXXXXXXXXX", value="+13235295127", name="personalinfo.phone.value")
-      input(type="email", placeholder="user@host.tld", value="yorick@ctrlaltdev.xyz", name="personalinfo.email")
-      input(type="text", placeholder="0xXXXXXXXX", value="0x6B5A7524", name="personalinfo.PGPKEY.txt")
-      input(type="text", placeholder="domain.tld/PGPKEY.txt", value="ctrlaltdev.xyz/PGPKEY.txt", name="personalinfo.PGPKEY.url")
-      input(type="github", placeholder="githubhandle", value="ctrlaltdev", name="personalinfo.github")
-      input(type="linkedin", placeholder="linkedinshorturl", value="yorickdemichelis", name="personalinfo.linkedin")
-      input(type="website", placeholder="hostname.tld", value="ctrlaltdev.xyz", name="personalinfo.website")
 
     input(type="submit", value="Generate")
