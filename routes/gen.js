@@ -4,23 +4,29 @@ var router = express.Router();
 router.post('/', function(req, res, next) {
 
   let info = {};
-  if(req.body["position"] !== ""){
-    info.position = req.body["position"];
-  }
 
   let personalinfo = {
+    name: {
+      txt: req.body["personalinfo.name.txt"],
+    },
+    title: {
+      txt: req.body["personalinfo.title.txt"],
+    },
     phone: {
       txt: req.body["personalinfo.phone.txt"],
-      value: req.body["personalinfo.phone.value"]
+      value: '+' + req.body["personalinfo.phone.txt"].replace(/[^a-zA-Z0-9]/g, ''),
     },
     email: req.body["personalinfo.email"],
     PGPKEY: {
       txt: req.body["personalinfo.PGPKEY.txt"],
       url: req.body["personalinfo.PGPKEY.url"]
-    },
-    github: req.body["personalinfo.github"],
-    linkedin: req.body["personalinfo.linkedin"],
-    website: req.body["personalinfo.website"]
+    }
+  };
+
+  let links = {
+    github: req.body["links.github"],
+    linkedin: req.body["links.linkedin"],
+    website: req.body["links.website"]
   };
 
   let techs = null
@@ -107,6 +113,7 @@ router.post('/', function(req, res, next) {
     title: 'Resume',
     info: info,
     personalinfo: personalinfo,
+    links: links,
     experiences: experiences,
     education: education,
     skills: skills,
