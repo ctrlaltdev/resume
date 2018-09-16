@@ -1,8 +1,8 @@
 # RESUME
 
-This is an electron app that allows me to customize a resume and generate its PDF version easily.
+This is an electron app that allows you to create and customize a resume and export it in PDF easily.
 
-At last, no design software required to customize resumes and cover letters.
+At last, no design software required to customize resumes.
 
 ## Requirements
 

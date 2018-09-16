@@ -1,7 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
@@ -17,7 +16,6 @@ srv.set('view engine', 'pug');
 srv.use(logger('dev'));
 srv.use(express.json());
 srv.use(express.urlencoded({ extended: false }));
-srv.use(cookieParser());
 srv.use(express.static(path.join(__dirname, 'public')));
 
 srv.use('/', indexRouter);

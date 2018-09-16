@@ -23,7 +23,6 @@
     "url": "https://github.com/ctrlaltdev/resume/issues"
   },
   "dependencies": {
-    "cookie-parser": "^1.4.3",
     "debug": "^4.0.1",
     "electron": "^2.0.9",
     "express": "^4.16.3",
