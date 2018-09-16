@@ -17,13 +17,13 @@ function btnClick() {
       addSkill();
       break;
     case "btnexp":
-      addExp(this.previousSibling.lastChild.id);
+    this.previousSibling.lastChild ? addExp(this.previousSibling.lastChild.id) : addExp();
       break;
     case "btnexpdesc":
       addExpDesc(this.parentElement.id);
       break;
     case "btneduc":
-      addEduc(this.previousSibling.lastChild.id);
+    this.previousSibling.lastChild ? addEduc(this.previousSibling.lastChild.id) : addEduc();
       break;
     case "btneducdesc":
       addEducDesc(this.parentElement.id);
@@ -73,7 +73,7 @@ function addSkill() {
   document.querySelector('fieldset.skill').appendChild(input);
 }
 
-function addExp(id) {
+function addExp(id = "exp1") {
   let index = getIndex(id, 1);
 
   let div = document.createElement('div');
@@ -144,7 +144,7 @@ function addExpDesc(id) {
   document.querySelector(selector).appendChild(input);
 }
 
-function addEduc(id) {
+function addEduc(id = "educ1") {
   let index = getIndex(id, 2);
 
   let div = document.createElement('div');

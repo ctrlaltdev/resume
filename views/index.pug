@@ -8,7 +8,8 @@ block content
 
   - var skills = ["SCRUM", "Agile", "Waterfall", "Project Management", "Product Management"];
 
-  - var education = [{title:"Marketing, Communication and Internet", org:"ESA3", desc:[],"year":"2013", location: "Paris, France"},{title:"M.S. in Multimedia Project Management", org:"Ecole Multimedia", desc:[],"year":"2012", location: "Paris, France"},{title:"B.S. in Information and Communications", org:"UNSA", desc:[],"year":"2011", location: "Nice, France"}];
+  - var experiences = [];
+  - var education = [];
 
   h1 Resume Generator
 
@@ -42,27 +43,6 @@ block content
         for lang in langs
           option(value=lang)= lang
       fieldset(name="lang").lang
-        input(list="langs", placeholder="Lang", name="langs", value="French")
-        select(name="langlvls", placeholder="Proficiency")
-          option(value="Beginner") Beginner
-          option(value="Intermediate") Intermediate
-          option(value="Advanced") Advanced
-          option(value="Fluent") Fluent
-          option(value="Native" selected) Native
-        input(list="langs", placeholder="Lang", name="langs", value="English")
-        select(name="langlvls", placeholder="Proficiency")
-          option(value="Beginner") Beginner
-          option(value="Intermediate") Intermediate
-          option(value="Advanced") Advanced
-          option(value="Fluent" selected) Fluent
-          option(value="Native") Native
-        input(list="langs", placeholder="Lang", name="langs", value="Spanish")
-        select(name="langlvls", placeholder="Proficiency")
-          option(value="Beginner" selected) Beginner
-          option(value="Intermediate") Intermediate
-          option(value="Advanced") Advanced
-          option(value="Fluent") Fluent
-          option(value="Native") Native
       button(type="button")#btnlang.more +
 
     #tech
