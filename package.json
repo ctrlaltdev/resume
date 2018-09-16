@@ -1,7 +1,6 @@
 {
   "name": "resume",
   "version": "1.0.0",
-  "private": true,
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,14 +24,14 @@
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
-    "debug": "^3.1.0",
-    "electron": "^2.0.2",
+    "debug": "^4.0.1",
+    "electron": "^2.0.9",
     "express": "^4.16.3",
-    "http-errors": "^1.6.3",
-    "morgan": "^1.9.0",
+    "http-errors": "^1.7.1",
+    "morgan": "^1.9.1",
     "pug": "^2.0.3"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.3"
   }
 }
