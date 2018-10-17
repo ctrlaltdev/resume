@@ -19,23 +19,23 @@ function initialize () {
 
   function createWindow () {
     const windowOptions = {
-      width: 1080,
-      minWidth: 680,
-      height: 840,
-      titleBarStyle: 'hiddenInset',
+      width: 800,
+      height: 600,
+      resizable: false,
+      frame: false,
       title: app.getName()
     }
-
+    
     if (process.platform === 'linux') {
       windowOptions.icon = path.join(__dirname, '/assets/app-icon/png/512.png')
     }
-
+    
     mainWindow = new BrowserWindow(windowOptions)
     mainWindow.loadURL(path.join('file://', __dirname, '/app/index.html'))
 
     if (debug) {
-      mainWindow.webContents.openDevTools()
-      mainWindow.maximize()
+      //mainWindow.webContents.openDevTools()
+      //mainWindow.maximize()
       require('devtron').install()
     }
 

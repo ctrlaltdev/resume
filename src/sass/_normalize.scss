@@ -339,3 +339,21 @@ template {
 [hidden] {
   display: none;
 }
+
+/**
+ * Set the fonts
+ */
+@import 'fonts';
+
+html {
+  font-size: 8px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: bold;
+}

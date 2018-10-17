@@ -6,7 +6,7 @@ const path = require('path')
 const request = require('request')
 const util = require('util')
 
-const token = process.env.ELECTRON_API_DEMO_GITHUB_TOKEN
+const token = process.env.RESUMEGEN_GITHUB_TOKEN
 const version = require('../package').version
 
 checkToken()
@@ -21,7 +21,7 @@ checkToken()
 
 function checkToken () {
   if (!token) {
-    return Promise.reject('ELECTRON_API_DEMO_GITHUB_TOKEN environment variable not set\nSet it to a token with repo scope created from https://github.com/settings/tokens/new')
+    return Promise.reject('RESUMEGEN_GITHUB_TOKEN environment variable not set\nSet it to a token with repo scope created from https://github.com/settings/tokens/new')
   } else {
     return Promise.resolve(token)
   }
@@ -54,14 +54,14 @@ function zipAssets () {
   const outPath = path.join(__dirname, '..', 'out')
 
   const zipAssets = [{
-    name: 'electron-api-demos-mac.zip',
-    path: path.join(outPath, 'Electron API Demos-darwin-x64', 'Electron API Demos.app')
+    name: 'resumegen-mac.zip',
+    path: path.join(outPath, 'ResumeGen-darwin-x64', 'Electron API Demos.app')
   }, {
-    name: 'electron-api-demos-windows.zip',
-    path: path.join(outPath, 'Electron API Demos-win32-ia32')
+    name: 'resumegen-windows.zip',
+    path: path.join(outPath, 'ResumeGen-win32-ia32')
   }, {
-    name: 'electron-api-demos-linux.zip',
-    path: path.join(outPath, 'Electron API Demos-linux-x64')
+    name: 'resumegen-linux.zip',
+    path: path.join(outPath, 'ResumeGen-linux-x64')
   }]
 
   return Promise.all(zipAssets.map(zipAsset)).then((zipAssets) => {
@@ -69,18 +69,18 @@ function zipAssets () {
       name: 'RELEASES',
       path: path.join(outPath, 'windows-installer', 'RELEASES')
     }, {
-      name: 'ElectronAPIDemosSetup.exe',
-      path: path.join(outPath, 'windows-installer', 'ElectronAPIDemosSetup.exe')
+      name: 'ResumeGenSetup.exe',
+      path: path.join(outPath, 'windows-installer', 'ResumeGenSetup.exe')
     }, {
-      name: `electron-api-demos-${version}-full.nupkg`,
-      path: path.join(outPath, 'windows-installer', `electron-api-demos-${version}-full.nupkg`)
+      name: `resume-gen-${version}-full.nupkg`,
+      path: path.join(outPath, 'windows-installer', `resume-gen-${version}-full.nupkg`)
     }])
   })
 }
 
 function createRelease (assets) {
   const options = {
-    uri: 'https://api.github.com/repos/electron/electron-api-demos/releases',
+    uri: 'https://api.github.com/repos/ctrlaltdev/resumegen/releases',
     headers: {
       Authorization: `token ${token}`,
       'User-Agent': `node/${process.versions.node}`

@@ -1,0 +1,43 @@
+@import normalize
+
+body
+  background-color: Turquoise
+
+.loader
+  height: 100%
+  display: flex
+  flex-flow: row wrap
+  align-content: center
+  justify-content: center
+  h1
+    flex: 0 0 100%
+    text-align: center
+    padding-top: none
+    margin-top: none
+    color: Azure
+    font-size: 8rem
+  &__title
+    flex: 0 0 100%
+    text-align: center
+    color: Azure
+    font-size: 4rem
+  &__new
+    border-radius: 8% 8% 92% 8% / 8% 8% 92% 8% 
+  &__load
+    border-radius: 92% 8% 8% 8% / 92% 8% 8% 8% 
+  button
+    flex: 0 0 auto
+    background-color: Azure
+    width: 20rem
+    height: 16rem
+    border: none
+    font-size: 3rem
+    margin: 2rem 2rem 26rem 2rem
+    padding: auto
+    color: Turquoise
+    cursor: pointer
+    font-weight: 600
+    transition: font-weight 0.5s
+    &:hover
+      font-weight: 800
+      transition: font-weight 0.5s

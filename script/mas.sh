@@ -3,7 +3,7 @@
 set -ex
 
 # App Store does not allow the word "demos" in the app's name
-APP="Electron APIs"
+APP="Resume Generator"
 
 electron-packager . \
   "$APP" \

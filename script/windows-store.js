@@ -6,7 +6,7 @@ const metadata = require('../package')
 const command = path.join(__dirname, '..', 'node_modules', '.bin', 'electron-windows-store.cmd')
 const args = [
   '--input-directory',
-  path.join(__dirname, '..', 'out', 'ElectronAPIDemos-win32-ia32'),
+  path.join(__dirname, '..', 'out', 'ResumeGen-win32-ia32'),
   '--output-directory',
   path.join(__dirname, '..', 'out', 'windows-store'),
   '--flatten',
