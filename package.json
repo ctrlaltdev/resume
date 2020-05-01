@@ -7,7 +7,9 @@
   "scripts": {
     "start": "electron .",
     "sass": "./node_modules/.bin/node-sass --output ./public/style/ --source-map true --source-map-contents ./public/style/",
-    "test": "exit 0"
+    "test": "exit 0",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "Yorick <yorick@ctrlaltdev.xyz>",
   "licenses": [
@@ -30,9 +32,11 @@
     "express": "^4.16.4",
     "http-errors": "^1.7.2",
     "morgan": "^1.9.1",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "node-sass": "^4.11.0"
-  }
+  },
+  "snyk": true
 }
