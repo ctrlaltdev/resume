@@ -8,7 +8,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "node dist/main.js",
+    "generate": "node dist/main.js",
     "lint": "eslint .",
     "prepare": "husky install",
     "build": "babel src -d dist",
