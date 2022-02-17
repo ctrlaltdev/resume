@@ -16,3 +16,6 @@ ignorePatterns:
   - 'dist'
   - 'legacy'
 rules: {}
+settings:
+  react:
+    version: 'detect'
