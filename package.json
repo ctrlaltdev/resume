@@ -1,38 +1,51 @@
 {
   "name": "resume",
-  "version": "1.0.0",
-  "private": true,
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Resume PDF Generator",
+  "main": "main.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "start": "electron .",
-    "sass": "./node_modules/.bin/node-sass --output ./public/style/ --source-map true --source-map-contents ./public/style/",
+    "start": "node dist/main.js",
+    "lint": "eslint .",
+    "prepare": "husky install",
+    "build": "babel src -d dist",
     "test": "exit 0"
   },
-  "author": "Yorick <yorick@ctrlaltdev.xyz>",
-  "licenses": [
-    {
-      "type": "MPL-2.0",
-      "url": "https://github.com/ctrlaltdev/resume/blob/master/LICENSE"
-    }
-  ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ctrlaltdev/resume.git"
+    "url": "git+https://github.com/ctrlaltdev/resume.git"
   },
+  "author": "Yorick <yorick@ctrlalt.dev>",
+  "license": "MPL-2.0",
   "bugs": {
     "url": "https://github.com/ctrlaltdev/resume/issues"
   },
-  "dependencies": {
-    "cookie-parser": "^1.4.4",
-    "debug": "^4.1.1",
-    "electron": "^4.1.4",
-    "express": "^4.16.4",
-    "http-errors": "^1.7.2",
-    "morgan": "^1.9.1",
-    "pug": "^2.0.3"
+  "homepage": "https://github.com/ctrlaltdev/resume#readme",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   },
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/preset-react": "^7.16.7",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^2.1.1",
+    "prop-types": "^15.8.1",
+    "react": "^16.14.0"
   }
 }
