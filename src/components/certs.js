@@ -6,8 +6,11 @@ import label from '../styles/label.js'
 
 const styles = StyleSheet.create({
   label,
-  certs: {},
-  link: {}
+  link: {
+    textDecoration: 'none',
+    color: '#000',
+    marginBottom: '10pt'
+  }
 })
 
 const Certs = ({ data }) => (

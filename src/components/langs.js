@@ -6,7 +6,10 @@ import label from '../styles/label.js'
 
 const styles = StyleSheet.create({
   label,
-  langs: {}
+  langs: {},
+  lang: {
+    lineHeight: 1.4
+  }
 })
 
 const Langs = ({ data }) => (
@@ -16,7 +19,7 @@ const Langs = ({ data }) => (
     </View>
     {
       data.map(item => (
-        <Text key={item}>{item}</Text>
+        <Text style={styles.lang} key={item}>{item}</Text>
       ))
     }
   </View>

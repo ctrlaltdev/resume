@@ -7,18 +7,18 @@ import label from '../styles/label.js'
 const styles = StyleSheet.create({
   label,
   tech: {
-
+    lineHeight: 1.4
   }
 })
 
 const Tech = ({ data }) => (
-  <View style={styles.tech}>
+  <View>
     <View>
       <Text style={styles.label}>Tech</Text>
     </View>
     {
       data.map(item => (
-        <Text key={item}>{item}</Text>
+        <Text style={styles.tech} key={item}>{item}</Text>
       ))
     }
   </View>

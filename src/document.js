@@ -29,24 +29,35 @@ const styles = StyleSheet.create({
     color: '#000000',
     padding: '20pt'
   },
-  main: {},
-  sidebar: {}
+  container: {
+    flex: 1,
+    flexDirection: 'row'
+  },
+  main: {
+    width: '72%'
+  },
+  sidebar: {
+    marginLeft: '2%',
+    width: '26%'
+  }
 })
 
 const Resume = () => (
   <Document>
     <Page size="Letter" style={styles.page}>
       <Header name={data.name} title={data.title} />
-      <View style={styles.main}>
-        <Experiences data={data.experiences} />
-        <Education data={data.education} />
-      </View>
-      <View style={styles.sidebar}>
-        <Tech data={data.tech} />
-        <Certs data={data.certs} />
-        <Links data={data.links} />
-        <Contact data={data.contact} />
-        <Langs data={data.langs} />
+      <View style={styles.container}>
+        <View style={styles.main}>
+          <Experiences data={data.experiences} />
+          <Education data={data.education} />
+        </View>
+        <View style={styles.sidebar}>
+          <Tech data={data.tech} />
+          <Certs data={data.certs} />
+          <Links data={data.links} />
+          <Contact data={data.contact} />
+          <Langs data={data.langs} />
+        </View>
       </View>
     </Page>
   </Document>

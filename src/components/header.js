@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
   name: {
     textTransform: 'uppercase',
     fontFamily: 'Titillium Web Bold',
+    fontWeight: 600,
     fontSize: '24pt',
     color: '#FFFFFF',
     marginBottom: '5pt'

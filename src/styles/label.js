@@ -4,5 +4,6 @@ export default {
   fontSize: '12pt',
   margin: '20pt 0pt 10pt 0pt',
   backgroundColor: '#3D3D3D',
-  color: '#FFFFFF'
+  color: '#FFFFFF',
+  padding: '3pt 20pt'
 }

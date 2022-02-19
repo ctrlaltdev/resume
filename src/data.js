@@ -21,11 +21,11 @@ export default {
       title: 'Tech Lead',
       org: 'Tech Holding',
       desc: [
-        'For TLYNT - Tech Lead - AWS, Terraform, Containers, Node, React, GraphQL',
-        'For Unibail-Rodamco-Westfield - Tech Lead - AWS, GCP, Terraform, Docker, Ruby, Python, Node',
-        'For BuildOps - Lead DevOps Engineer - AWS, Terraform, Containers, Node, Python, GraphQL',
-        'For Insperience - Lead DevOps Engineer - Azure, Terraform, Kubernetes, Containers',
-        'For Warner Bros. - Lead API Engineer - AWS, Terraform, Node, GraphQL, Containers, Python'
+        'For TLYNT - Tech Lead\nAWS, Terraform, Containers, Node, React, GraphQL',
+        'For Unibail-Rodamco-Westfield - Tech Lead\nAWS, GCP, Terraform, Docker, Ruby, Python, Node',
+        'For BuildOps - Lead DevOps Engineer\nAWS, Terraform, Containers, Node, Python, GraphQL',
+        'For Insperience - Lead DevOps Engineer\nAzure, Terraform, Kubernetes, Containers',
+        'For Warner Bros. - Lead API Engineer\nAWS, Terraform, Node, GraphQL, Containers, Python'
       ],
       start: 'Aug 2019',
       end: '-',

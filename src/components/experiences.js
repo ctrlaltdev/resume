@@ -6,7 +6,18 @@ import label from '../styles/label.js'
 
 const styles = StyleSheet.create({
   label,
-  experiences: {}
+  experience: {
+    marginBottom: '10pt'
+  },
+  headline: {
+    textTransform: 'uppercase',
+    fontFamily: 'Titillium Web Bold',
+    fontWeight: '600'
+  },
+  desc: {
+    marginLeft: '20pt',
+    marginTop: '6pt'
+  }
 })
 
 const Experiences = ({ data }) => (
@@ -16,11 +27,11 @@ const Experiences = ({ data }) => (
     </View>
     {
       data.map((item, i) => (
-        <View key={`${item.title}-${item.org}-${i}`}>
-          <Text>{item.title} - {item.org}</Text>
-          <Text>{item.location} - {item.start} - {item.end}</Text>
+        <View style={styles.experience} key={`${item.title}-${item.org}-${i}`}>
+          <Text style={styles.headline}>{item.title} - {item.org}</Text>
+          <Text>{item.start} - {item.end} / {item.location}</Text>
           {
-            item.desc.map((desc, i) => (<Text key={`${item.title}-${item.org}-desc-${i}`}>{desc}</Text>))
+            item.desc.map((desc, i) => (<Text key={`${item.title}-${item.org}-desc-${i}`} style={styles.desc}>{desc}</Text>))
           }
         </View>
       ))

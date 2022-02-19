@@ -5,7 +5,18 @@ import { Link, Text, View, StyleSheet } from '@react-pdf/renderer'
 import label from '../styles/label.js'
 
 const styles = StyleSheet.create({
-  label
+  label,
+  contact: {
+    marginBottom: '10pt'
+  },
+  link: {
+    textDecoration: 'none',
+    color: '#000'
+  },
+  subtitle: {
+    textTransform: 'uppercase',
+    fontFamily: 'Titillium Web Bold'
+  }
 })
 
 const formatPhone = (phone) => {
@@ -15,32 +26,32 @@ const formatPhone = (phone) => {
 const genContact = (item) => {
   if (item.type === 'email') {
     return (
-      <View key={item.label}>
-        <Text>{item.label}</Text>
-        <Link href={`mailto:${item.value}`}>{item.value}</Link>
+      <View style={styles.contact} key={item.label}>
+        <Text style={styles.subtitle}>{item.label}</Text>
+        <Link style={styles.link} href={`mailto:${item.value}`}>{item.value}</Link>
       </View>
     )
   }
 
   if (item.type === 'phone') {
     return (
-      <View key={item.label}>
-        <Text>{item.label}</Text>
-        <Link href={`tel:+1${formatPhone(item.value)}`}>{item.value}</Link>
+      <View style={styles.contact} key={item.label}>
+        <Text style={styles.subtitle}>{item.label}</Text>
+        <Link style={styles.link} href={`tel:+1${formatPhone(item.value)}`}>{item.value}</Link>
       </View>
     )
   }
 
   return (
-    <View key={item.label}>
-      <Text>{item.label}</Text>
+    <View style={styles.contact} key={item.label}>
+      <Text style={styles.subtitle}>{item.label}</Text>
       <Text>{item.value}</Text>
     </View>
   )
 }
 
 const Contact = ({ data }) => (
-  <View style={styles.header}>
+  <View>
     <View>
       <Text style={styles.label}>Contact</Text>
     </View>
