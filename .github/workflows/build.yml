@@ -20,7 +20,7 @@ jobs:
       - lint
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3.0.2
 
     - run: echo "NODE_VERSION=$(cat .node-version)" >> $GITHUB_ENV
     
