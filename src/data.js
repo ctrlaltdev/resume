@@ -1,6 +1,6 @@
 export default {
   name: 'Yorick Demichelis',
-  title: 'Tech Lead',
+  title: 'Software Architect',
   contact: [
     { type: 'email', label: 'Email', value: 'yorick@ctrlalt.dev' },
     { type: 'phone', label: 'Phone', value: '323 529 5721' }
@@ -14,15 +14,15 @@ export default {
     { type: 'linkedin', label: 'LinkedIn', value: 'yorickdemichelis' },
     { type: 'url', label: 'Website', value: 'ctrlalt.dev', href: 'https://ctrlalt.dev' }
   ],
-  tech: ['AWS', 'Azure', 'Terraform / Terragrunt', 'Kubernetes', 'Bash / Shell', 'Go', 'Node / JS', 'Python', 'GraphQL', 'React'],
+  tech: ['AWS', 'Azure', 'Terraform / Terragrunt', 'Kubernetes', 'Bash / Shell', 'Go', 'Typescript', 'Node / JS', 'Python', 'GraphQL', 'React'],
   langs: ['French', 'English', 'Spanish'],
   experiences: [
     {
       title: 'Tech Lead',
       org: 'Tech Holding',
       desc: [
-        'For TLYNT - Tech Lead\nAWS, Terraform, Containers, Node, React, GraphQL',
-        'For Unibail-Rodamco-Westfield - Tech Lead\nAWS, GCP, Terraform, Docker, Ruby, Python, Node',
+        'For TLYNT - Architect\nAWS, Terraform, Containers, Node, React, GraphQL',
+        'For Westfield - Architect\nAWS, Terraform, Containers, Typescript',
         'For BuildOps - Lead DevOps Engineer\nAWS, Terraform, Containers, Node, Python, GraphQL',
         'For Insperience - Lead DevOps Engineer\nAzure, Terraform, Kubernetes, Containers',
         'For Warner Bros. - Lead API Engineer\nAWS, Terraform, Node, GraphQL, Containers, Python'
